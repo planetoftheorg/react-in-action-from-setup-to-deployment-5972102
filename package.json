@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@picocss/pico": "^2.0.6",
     "babel-plugin-react-compiler": "^19.0.0-beta-df7b47d-20241124",
     "eslint-plugin-react-compiler": "^19.0.0-beta-df7b47d-20241124",
     "react": "^19.0.0-rc.1",

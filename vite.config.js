@@ -5,9 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react({
     plugins: ['babel-plugin-react-compiler'],
-  })],
-  base: './',
-  build: {
-    outDir: 'docs'
-  }
+  })]
 })
