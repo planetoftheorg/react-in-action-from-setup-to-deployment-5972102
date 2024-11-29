@@ -1,0 +1,17 @@
+:root {
+  --pico-typography-spacing-vertical: 1.5rem;
+  --pico-form-element-spacing-vertical: 1rem;
+  --pico-form-element-spacing-horizontal: 1.25rem;
+  --pico-font-family: Mona, sans-serif;
+}
+
+button {
+  --pico-font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6, b {
+    --pico-font-family: Hubot, sans-serif;
+    --pico-font-weight: 600;
+    color: purple;
+    --pico-typography-spacing-vertical: 0.5rem;
+}
