@@ -13,7 +13,7 @@ function Nav({ cast, onChoice }) {
         <li>
           <details className="dropdown">
             <summary>Cast</summary>
-            <ul dir="rtl">
+            <ul dir="rtl" style={{ fontSize: '.8rem', lineHeight: '.7rem' }}>
               {cast.map(member => (
                 <li key={member.id}>
                   <a href="#" onClick={() => { onChoice(member) }}
