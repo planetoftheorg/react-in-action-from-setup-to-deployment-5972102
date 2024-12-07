@@ -1,13 +1,26 @@
-import "@picocss/pico/css/pico.min.css";
-import "@picocss/pico/css/pico.colors.css";
+import { useEffect, useState } from "react";
+
 import Nav from "./components/Nav"
 import ListCast from "./components/ListCast"
-import { useState } from "react";
 import Modals from "./components/Modals";
+
+import "@picocss/pico/css/pico.min.css";
+import "@picocss/pico/css/pico.colors.css";
 
 function App() {
   const name = 'Stargazers';
+  let [cast, setCast] = useState([]);
   let [memberInfo, setMemberInfo] = useState(null);
+
+  async function fetchCast() {
+    const response = await fetch('cast.json');
+    setCast(await response.json());
+  }
+
+  useEffect(() => {
+    fetchCast();
+  });
+
   return (
     <div className="container">
       <Nav />
@@ -20,7 +33,7 @@ function App() {
           handleClose={() => { setMemberInfo(null) }}
         />
       }
-      <ListCast onChoice={(info) => { setMemberInfo(info) }} />
+      <ListCast cast={cast} onChoice={(info) => { setMemberInfo(info) }} />
     </div>
   )
 }

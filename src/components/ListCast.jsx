@@ -1,16 +1,4 @@
-import { useState, useEffect } from "react";
-
-function ListCast({ onChoice }) {
-  const [cast, setCast] = useState([]);
-
-  async function fetchCast() {
-    const response = await fetch('cast.json');
-    setCast(await response.json());
-  }
-
-  useEffect(() => {
-    fetchCast();
-  });
+function ListCast({ cast, onChoice }) {
 
   return (
     <div style={{
