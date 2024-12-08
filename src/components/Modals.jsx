@@ -1,4 +1,4 @@
-function Modals({ member, handleClose }) {
+function Modals({ member, handleClose, handleChange }) {
   return (
     (member &&
       <dialog open>
@@ -22,6 +22,14 @@ function Modals({ member, handleClose }) {
               </hgroup>
             </div>
           </hgroup>
+          <footer style={{display: 'flex', justifyContent: 'space-between'}}>
+            <a href="#" role="button"
+              onClick={() => { handleChange(Number(member.id) - 1) }}
+            >Prev</a>
+            <a href="#" role="button"
+              onClick={() => { handleChange(Number(member.id) + 1) }}
+            >Next</a>
+          </footer>
         </article>
       </dialog>
     )
