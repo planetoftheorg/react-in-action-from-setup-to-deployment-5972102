@@ -1,3 +1,5 @@
+import Arrow from './icons/Arrow';
+
 function Modals({ member, handleClose, handleChange }) {
   return (
     (member &&
@@ -25,10 +27,10 @@ function Modals({ member, handleClose, handleChange }) {
           <footer style={{display: 'flex', justifyContent: 'space-between'}}>
             <a href="#" role="button"
               onClick={() => { handleChange(Number(member.id) - 1) }}
-            >Prev</a>
+            ><Arrow /></a>
             <a href="#" role="button"
               onClick={() => { handleChange(Number(member.id) + 1) }}
-            >Next</a>
+            ><Arrow flip={true} /></a>
           </footer>
         </article>
       </dialog>
