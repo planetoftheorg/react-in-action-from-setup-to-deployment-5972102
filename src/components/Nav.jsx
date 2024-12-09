@@ -1,4 +1,6 @@
-function Nav({cast, onChoice}) {
+import ToggleTheme from './ToggleTheme';
+
+function Nav({ cast, onChoice }) {
   return (
     <nav className="container">
       <ul>
@@ -6,6 +8,7 @@ function Nav({cast, onChoice}) {
         <li><strong>Stargazers</strong></li>
       </ul>
       <ul>
+        <li><ToggleTheme /></li>
         <li>
           <details className="dropdown">
             <summary>Cast</summary>
@@ -13,8 +16,8 @@ function Nav({cast, onChoice}) {
               {cast.map(member => (
                 <li key={member.id}>
                   <a href="#" onClick={() => { onChoice(member) }}>{member.name}</a>
-                  </li>
-                ))}
+                </li>
+              ))}
             </ul>
           </details>
         </li>
