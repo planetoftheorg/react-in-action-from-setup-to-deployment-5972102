@@ -1,5 +1,5 @@
 import Arrow from './icons/Arrow';
-
+import { buttonStyle } from './InterfaceStyles';
 function Modals({ member, handleClose, handleChange }) {
   return (
     (member &&
@@ -24,11 +24,11 @@ function Modals({ member, handleClose, handleChange }) {
               </hgroup>
             </div>
           </hgroup>
-          <footer style={{display: 'flex', justifyContent: 'space-between'}}>
-            <a href="#" role="button"
+          <footer style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <a href="#" style={buttonStyle} role="button"
               onClick={() => { handleChange(Number(member.id) - 1) }}
             ><Arrow /></a>
-            <a href="#" role="button"
+            <a href="#" style={buttonStyle} role="button"
               onClick={() => { handleChange(Number(member.id) + 1) }}
             ><Arrow flip={true} /></a>
           </footer>

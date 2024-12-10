@@ -1,0 +1,11 @@
+:root {
+  --pico-font-size: 1.25rem;
+}
+
+body {
+  font-size: var(--pico-font-size);
+}
+
+h1 {
+  color: var(--pico-color-pink-500);
+}
