@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react({
     plugins: ['babel-plugin-react-compiler'],
   })],
+  base: './',
   build: {
     outDir: 'docs',
   }
