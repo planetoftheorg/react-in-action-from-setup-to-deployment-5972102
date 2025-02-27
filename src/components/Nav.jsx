@@ -4,10 +4,6 @@ function Nav({ cast, onChoice }) {
   return (
     <nav className="container">
       <ul>
-        <li><a href="#"><img style={{ height: '50px' }} src="images/logo_bug_stargazers.svg" alt="Stargazers Logo" /></a></li>
-        <li><strong>Stargazers</strong></li>
-      </ul>
-      <ul>
         <li><ToggleTheme /></li>
         <li>
           <details className="dropdown">
