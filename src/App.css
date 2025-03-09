@@ -16,7 +16,12 @@ h1 {
   margin-bottom: .5rem;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Hubot Sans", sans-serif;
   font-weight: 700;
 }
@@ -24,4 +29,64 @@ h1,h2,h3,h4,h5,h6 {
 b {
   font-family: "Hubot Sans", sans-serif;
   color: var(--pico-color-violet-500);
+}
+
+nav details.dropdown summary {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+nav details.dropdown ul {
+  font-size: 0.9rem;
+  padding: 0.25rem;
+}
+
+nav details.dropdown ul li a {
+  padding: 0.25rem 0.5rem;
+}
+
+nav details.dropdown summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+}
+
+@media (max-width: 576px) {
+  dialog article hgroup>div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  dialog article hgroup>div img {
+    width: 150px;
+  }
+
+  dialog article hgroup>div hgroup {
+    width: 100%;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+dialog[open] {
+  animation: slide-up 0.5s ease-out;
+  /* Increased from 0.3s to 0.5s for slower animation */
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
 }

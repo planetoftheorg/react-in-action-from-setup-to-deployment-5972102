@@ -13,9 +13,26 @@ function App() {
   let [cast, setCast] = useState([]);
   let [memberInfo, setMemberInfo] = useState(null);
 
+  // Fetches cast data from JSON file with error handling and type safety
   async function fetchCast() {
-    const response = await fetch('cast.json');
-    setCast(await response.json());
+    try {
+      // Make API request with fetch
+      const response = await fetch('cast.json');
+
+      // Check if request was successful (status 200-299)
+      if (!response.ok) {
+        throw new Error('Failed to fetch cast data');
+      }
+
+      // Parse JSON response and update state
+      const data = await response.json();
+      setCast(data);
+    } catch (error) {
+      // Log error and set empty cast array as fallback
+      // This prevents the app from crashing if fetch fails
+      console.error('Error fetching cast:', error);
+      setCast([]);
+    }
   }
 
   useEffect(() => {
@@ -28,6 +45,7 @@ function App() {
       <img src="images/group.svg" alt="StarGazers Group" />
       <hgroup>
         <h1>Meet the {name}</h1>
+        <p>Members of an <b>intergalactic alliance</b> paving the way for peace and benevolence among all species. They are known for their enthusiasm for science, for their love of fun, and their dedication to education.</p>
       </hgroup>
       {memberInfo &&
         <Modals
